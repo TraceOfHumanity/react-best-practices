@@ -1,15 +1,22 @@
-import { useState } from 'react';
-
-import { useToggle } from 'hooks/useToggle';
-import { Button } from 'ui-elements/Button';
+import logo from './logo.svg';
 
 function App() {
-  const [isVisible, toggleVisible] = useToggle(false);
-
   return (
-    <div className="app">
-      <Button text="Click me" onClick={() => toggleVisible()} />
-      {isVisible && <p>Visible</p>}
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
