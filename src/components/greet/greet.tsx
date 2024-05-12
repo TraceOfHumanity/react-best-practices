@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react";
 
-type GreetProps = {
-  name?: string
-}
-
-export const Greet = (props: GreetProps) => {
-  return (
-    <div>
-      hello {props?.name}
-    </div>
-  )
-}
+export const Greet = () => {
+  const [name, setName] = React.useState("");
+  return <div>
+    <input type="text" value={name} onChange={e => setName(e.target.value)} />
+    <h1>Hello, {name || "World"}!</h1>
+  </div>;
+};

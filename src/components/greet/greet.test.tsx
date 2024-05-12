@@ -1,14 +1,12 @@
-import {render, screen} from "@testing-library/react";
+import {fireEvent, render, screen} from "@testing-library/react";
 import {Greet} from "./greet";
 
-test("greet render correctly", () => {
-  render(<Greet />);
-  const textElement = screen.getByText(/hello/i);
-  expect(textElement).toBeInTheDocument();
-});
+describe("Greet", () => {
+  test("render correctly", () => {
+    render(<Greet />);
+    screen.debug();
+    fireEvent.change(screen.getByRole("textbox"), {target: {value: "World"}});
+    screen.debug();
+  });
 
-test("greet render correctly with name", () => {
-  render(<Greet name="world" />);
-  const textElement = screen.getByText(/hello world/i);
-  expect(textElement).toBeInTheDocument();
 });
