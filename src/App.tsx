@@ -1,11 +1,11 @@
+import { UseCallbackExample } from "components/UseCallbackExample";
 import React from "react";
-
-import {UseMemoExample} from "components/UseMemoExample";
 
 function App() {
   return (
     <div>
-      <UseMemoExample />
+      {/* <UseMemoExample /> */}
+      <UseCallbackExample />
     </div>
   );
 }
